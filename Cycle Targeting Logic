@@ -1,0 +1,20 @@
+# src/03_cycle_targeting.py
+
+def determine_cycle_status(row) -> str:
+    """
+    Determine whether the unit enters a new replacement cycle
+    or continues an existing one.
+    """
+
+    historical_replacements = [
+        row["cycle_replaced_2021"],
+        row["cycle_replaced_2022"],
+        row["cycle_replaced_2023"],
+        row["cycle_replaced_2024"],
+    ]
+
+    if all(v == 0 for v in historical_replacements):
+        return "cycle start"
+    elif sum(historical_replacements) == 1:
+        return "cycle continue"
+    return "not eligible"

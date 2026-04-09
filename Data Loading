@@ -1,0 +1,24 @@
+# src/01_load_data.py
+import pandas as pd
+
+def load_raw_data():
+    """
+    Load all raw datasets required for cycle replacement analysis.
+    Paths are externalized for security.
+    """
+
+    unit_master_df = pd.read_csv("data/raw/unit_master.csv", low_memory=False)
+    building_df = pd.read_excel("data/raw/building_master.xlsx")
+    customer_address_df = pd.read_excel("data/raw/customer_address.xlsx")
+    lift_spec_df = pd.read_excel("data/raw/lift_specifications.xlsx")
+    safety_df = pd.read_excel("data/raw/safety_schedule.xlsx")
+    stock_df = pd.read_excel("data/raw/parts_stock.xlsx")
+
+    return {
+        "unit_master": unit_master_df,
+        "building": building_df,
+        "customer_address": customer_address_df,
+        "lift_spec": lift_spec_df,
+        "safety": safety_df,
+        "stock": stock_df,
+    }

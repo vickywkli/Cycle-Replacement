@@ -1,0 +1,10 @@
+# src/04_safety_schedule.py
+from pandas.tseries.offsets import DateOffset
+
+def calculate_proposal_date(next_test_date):
+    """
+    Proposal should be issued 4 months before statutory test.
+    """
+    if pd.isna(next_test_date):
+        return None
+    return next_test_date - DateOffset(months=4)

@@ -1,22 +1,26 @@
 # Cycle Replacement Pipeline
 
-This repository contains a **clean, reproducible Python pipeline** for
-cycle replacement proposal generation.
+This repository demonstrates a **cycle replacement analysis pipeline**
+using **auto-generated fake data**.
 
-## What this project does
-- Loads unit, customer, callback, and cycle data
-- Identifies cycle replacement targets
-- Calculates proposal schedule and cost
-- Outputs structured datasets for quotation and reporting
+✅ No real customer data  
+✅ Safe for GitHub  
+✅ Reproducible  
+✅ Easy to understand  
 
-## Data safety
-- No real customer data is stored
-- All data in `sample_data/` is **falsified**
-- Real data paths are configured via `config.yaml` (not committed)
+---
 
-## How to use (high level)
-1. Copy `config/config.example.yaml` → `config/config.yaml`
-2. Replace paths with your own data
-3. Run `python -m cycle_replacement.run`
+## How it works
 
-This structure is designed for **GitHub readers** and **internal handover**.
+1. Generate fake data (units, customers, callbacks)
+2. Run a simple pipeline that reads the data
+3. Produce a summary output
+
+---
+
+## Quick start
+
+```bash
+pip install -r requirements.txt
+python scripts/generate_fake_data.py
+python -m cycle_replacement.run

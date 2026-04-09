@@ -1,0 +1,17 @@
+# src/02_preprocess.py
+import pandas as pd
+
+def normalize_units(unit_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Standardize identifiers & remove non‑target units.
+    """
+
+    unit_df = unit_df.copy()
+    unit_df["UnitNo"] = unit_df["UnitNo"].astype(str).str.upper()
+
+    # Exclude service lifts from commercial cycle targeting
+    unit_df = unit_df[
+        ~unit_df["UnitUsageAbbreviation"].str.contains("Service Lift", na=False)
+    ]
+
+    return unit_df

@@ -3,10 +3,10 @@
 This repository demonstrates a **cycle replacement analysis pipeline**
 using **auto-generated fake data**.
 
-✅ No real customer data  
-✅ Safe for GitHub  
-✅ Reproducible  
-✅ Easy to understand  
+1) No real customer data  
+2) Safe for GitHub  
+3) Reproducible  
+4) Easy to understand  
 
 ---
 
